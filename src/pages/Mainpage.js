@@ -1,8 +1,9 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
 
 function Mainpage() {
   return (
-    <div>Mainpage</div>
+    <div><Navbar /></div>
   )
 }
 
