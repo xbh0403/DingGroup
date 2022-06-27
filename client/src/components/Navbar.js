@@ -16,7 +16,7 @@ export default function Navbar() {
         <Toolbar>
           <Typography variant="h6" noWrap component="a" href="/"
             sx={{ color: 'inherit', textDecoration: 'none',}}
-          >The Ding Group
+          >The Ding Group Logo
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

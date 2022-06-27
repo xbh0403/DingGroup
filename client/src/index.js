@@ -8,9 +8,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
-import Research from './components/pages/Research';
-import People from './components/pages/People';
-import Contact from './components/pages/Contact';
+import Research from './pages/Research';
+import People from './pages/People';
+import Contact from './pages/Contact';
 import rootReducer from './redux/reducers';
 
 const store = configureStore({ reducer: rootReducer });
