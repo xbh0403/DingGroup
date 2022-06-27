@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  BrowserRouter, Route, Routes
+} from "react-router-dom";
+import Research from './components/pages/Research';
+import People from './components/pages/People';
+import Contact from './components/pages/Contact';
+import rootReducer from './redux/reducers';
 
+const store = configureStore({ reducer: rootReducer });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+
+          <Route path="/" element={<App />} />
+          <Route path="/meetups" element={<Research />} />
+          <Route path="/meetup/:id" element={<People />} />
+          <Route path="/meetup/:id" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
