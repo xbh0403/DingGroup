@@ -9,10 +9,8 @@ import logo from '../images/UBC-logo-2018-fullsig-blue-rgb72.jpg'
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Link>
-          <a href="https://www.ubc.ca" target="_blank" rel="noreferrer">
+      <Link href="https://www.ubc.ca">
           <img src={logo} alt="example" />
-        </a>
       </Link>
       <AppBar position="static" sx={{ bgcolor: "#002145" }}>
         <Toolbar>
