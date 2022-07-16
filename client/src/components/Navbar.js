@@ -12,7 +12,7 @@ export default function Navbar() {
       <Link href="https://www.ubc.ca">
           <img src={logo} alt="example" />
       </Link>
-      <AppBar position="static" sx={{ bgcolor: "#002145" }}>
+      <AppBar position="static" sx={{ bgcolor: "#02145" }}>
         <Toolbar>
           <Typography variant="h6" noWrap component="a" href="/"
             sx={{ color: 'inherit', textDecoration: 'none',}}
