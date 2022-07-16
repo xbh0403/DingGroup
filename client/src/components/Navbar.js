@@ -8,16 +8,12 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import AlignHorizontalLeftIcon from '@mui/icons-material/AlignHorizontalLeft';
-import { Stack, Link } from '@mui/material';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
-import { createTheme } from '@mui/material/styles';
 // import logo from '../images/UBC-logo-2018-fullsig-blue-rgb72.jpg'
-import logo from '../images/UBC-logo-2018-fullsig-white-rgb72.png';
+import logo from '../images/Lab_2.png';
 
 const drawerWidth = 240;
 const navItems = ['Research', 'People', 'News', 'Openings', 'Contact'];
@@ -63,9 +59,9 @@ export default function Navbar() {
           >
           <ReadMoreIcon />
           </IconButton>
-          <Typography variant="h6" component="div">
-            The Ding Group
-          </Typography>
+          <a href="/" style={{ textDecoration: 'none' }}>
+            <img src={logo} alt="The Ding Group" style={{ height: 64, width: 170, marginLeft: 'auto' }} />
+          </a>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }} href={("/".concat(item)).toLowerCase()}>
