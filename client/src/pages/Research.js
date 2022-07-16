@@ -1,8 +1,13 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+import { Typography } from '@mui/material'
 
 function Research() {
   return (
-    <div>Research</div>
+    <>
+      <Navbar/>
+      <Typography variant="h4">Research</Typography>
+    </>
   )
 }
 

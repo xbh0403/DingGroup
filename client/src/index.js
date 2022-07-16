@@ -13,7 +13,7 @@ import People from './pages/People';
 import Contact from './pages/Contact';
 import rootReducer from './redux/reducers';
 import News from './pages/News';
-import Join from './pages/Join';
+import Opinings from './pages/Opinings';
 
 const store = configureStore({ reducer: rootReducer });
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,10 +24,10 @@ root.render(
         <Routes>
 
           <Route path="/" element={<App />} />
-          <Route path="/publication" element={<Research />} />
+          <Route path="/research" element={<Research />} />
           <Route path="/people" element={<People />} />
           <Route path="/news" element={<News />} />
-          <Route path="/join" element={<Join />} />
+          <Route path="/openings" element={<Opinings />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
