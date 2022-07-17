@@ -9,7 +9,7 @@ const handleApiLoaded = (map, maps) => {
   // use map and maps objects
 };
 
-export default function GoogleMap(){
+export default function GoogleMap({height, width}){
   const defaultProps = {
     center: {
       lat: 49.26131619158471,
@@ -20,7 +20,7 @@ export default function GoogleMap(){
 
   return (
     // Important! Always set the container height explicitly
-    <div style={{ height: '60vh', width: '80%', margin:'auto'}}>
+    <div style={{ height: height, width: width, margin:'auto'}}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: googleMapApiKey }}
         defaultCenter={defaultProps.center}

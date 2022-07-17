@@ -1,20 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { Typography, Stack, Grid, Box, Link } from '@mui/material'
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
 import backgroundImage from '../images/cyp.png'
 import GoogleMap from '../components/GoogleMap';
+import useWindowDimensions from '../components/Window';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 function Contact() {
+  const { height, width } = useWindowDimensions();
+
   return (
     <>
       <Stack
@@ -35,34 +29,33 @@ function Contact() {
         </Typography>
       </Stack>
       <Box sx={{ flexGrow: 1 }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{mt:10, px:10}}>
+      <Grid container
+            spacing={2}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            sx={{mt:5}}>
         <Grid item xs={6}>
-          <Typography variant="h5" sx={{alignContent:'center', color:'#000000'}}>
+          <Typography variant="h5" align='center'>
             Email
           </Typography>
-          <Typography variant="h6" display='block' sx={{alignContent:'center', color:'#000000'}}>
+          <Typography variant="body" display='block' align='center'>
             jiarui.ding@ubc.ca
           </Typography>
         </Grid>
         <Grid item xs={6}>
-          <Typography variant="h5" sx={{alignContent:'center', color:'#000000'}}>
+          <Typography variant="h5" align='left'>
             Address
           </Typography>
-          <Typography variant="body" display='block' sx={{alignContent:'center', color:'#000000'}}>
+          <Typography variant="body" display='block' align='left'>
             Institute for Computing, Information and Cognitive Systems {<Link href="https://icics.ubc.ca/">{"(ICICS)"}</Link>}
           </Typography>
-          <Typography variant="body" display='block' sx={{alignContent:'center', color:'#000000'}}>
+          <Typography variant="body" display='block' align='left'>
             2366 Main Mall, Vancouver, BC Canada V6T 1Z4
           </Typography>
         </Grid>
-        <Grid item xs={12}>
-          <Item>2</Item>
-        </Grid>
-        <Grid item xs={6}>
-          <Item>3</Item>
-        </Grid>
-        <Grid item xs={12}>
-          <GoogleMap />
+        <Grid item xs={12} sx={{mt: 5}}>
+          <GoogleMap width={width*0.7} height={height > width ? width*0.7 : width*0.35}/>
         </Grid>
       </Grid>
       </Box>
