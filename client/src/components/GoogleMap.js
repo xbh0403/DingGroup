@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 import WhereToVoteIcon from '@mui/icons-material/WhereToVote';
+import { googleMapApiKey } from "../api_keys";
 
 const AnyReactComponent = () => <div>{<WhereToVoteIcon/>}</div>;
 
@@ -21,7 +22,7 @@ export default function GoogleMap(){
     // Important! Always set the container height explicitly
     <div style={{ height: '60vh', width: '80%', margin:'auto'}}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyCVYXlukwq1d6CncKTe_nGhhQO4wDzVGfE" }}
+        bootstrapURLKeys={{ key: googleMapApiKey }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         yesIWantToUseGoogleMapApiInternals
