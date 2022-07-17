@@ -1,12 +1,28 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography } from '@mui/material'
+import { Typography, Stack } from '@mui/material'
+import backgroundImage from '../images/cyp.png'
 
 function Join() {
   return (
     <>
-      <Navbar/>
-      <Typography variant="h4">Join</Typography>
+      <Stack
+        direction="column"
+        justifyContent="space-evenly"
+        alignItems="center"
+        spacing={2}
+        sx={{
+          backgroundImage: `url(${backgroundImage})`,
+          width: '100%',
+          height:'300px',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',}}
+      >
+        <Navbar/>
+        <Typography variant="h2" sx={{alignContent:'center', color:'#ffffff'}}>
+          Join us
+        </Typography>
+      </Stack>
     </>
   )
 }
