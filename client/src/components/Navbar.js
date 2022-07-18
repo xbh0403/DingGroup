@@ -35,7 +35,7 @@ export default function Navbar() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'center' }} href={("/".concat(item)).toLowerCase()}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
