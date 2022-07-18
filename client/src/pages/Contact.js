@@ -1,13 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack, Grid, Box, Link } from '@mui/material'
+import { Typography, Stack, Grid, Box, Link, IconButton } from '@mui/material'
 import backgroundImage from '../images/cyp.png'
 import GoogleMap from '../components/GoogleMap';
 import useWindowDimensions from '../components/Window';
-
+import EmailIcon from '@mui/icons-material/Email';
 
 function Contact() {
   const { height, width } = useWindowDimensions();
+  const handleOnClick = () => {
+    window.open("mailto:jiarui.ding@ubc.ca", '_blank');
+  }
 
   return (
     <>
@@ -29,35 +32,35 @@ function Contact() {
         </Typography>
       </Stack>
       <Box sx={{ flexGrow: 1 }}>
-      <Grid container
-            spacing={2}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            sx={{mt:5}}>
-        <Grid item xs={6}>
-          <Typography variant="h5" align='center'>
-            Email
-          </Typography>
-          <Typography variant="body" display='block' align='center'>
-            jiarui.ding@ubc.ca
-          </Typography>
+        <Grid container
+              spacing={2}
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              sx={{mt:5}}>
+          <Grid item xs={6}>
+            <Typography variant="h5" align='center'>
+              Email
+            </Typography>
+            <Typography variant="body" display='block' align='center' sx={{mt: 1}}>
+              jiarui.ding@ubc.ca {<IconButton onClick={handleOnClick}><EmailIcon/></IconButton>}
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h5" align='left'>
+              Address
+            </Typography>
+            <Typography variant="body" display='block' align='left'>
+              Institute for Computing, Information and Cognitive Systems {<Link href="https://icics.ubc.ca/">{"(ICICS)"}</Link>}
+            </Typography>
+            <Typography variant="body" display='block' align='left'>
+              2366 Main Mall, Vancouver, BC Canada V6T 1Z4
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sx={{mt: 5}}>
+            <GoogleMap width={width*0.7} height={height > width ? width*0.7 : width*0.35}/>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <Typography variant="h5" align='left'>
-            Address
-          </Typography>
-          <Typography variant="body" display='block' align='left'>
-            Institute for Computing, Information and Cognitive Systems {<Link href="https://icics.ubc.ca/">{"(ICICS)"}</Link>}
-          </Typography>
-          <Typography variant="body" display='block' align='left'>
-            2366 Main Mall, Vancouver, BC Canada V6T 1Z4
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sx={{mt: 5}}>
-          <GoogleMap width={width*0.7} height={height > width ? width*0.7 : width*0.35}/>
-        </Grid>
-      </Grid>
       </Box>
     </>
   )

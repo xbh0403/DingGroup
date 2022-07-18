@@ -19,7 +19,7 @@ function Mainpage() {
           backgroundPosition: 'center',}}
       >
         <Navbar/>
-        <Typography variant="h2" sx={{alignContent:'center', color:'#ffffff'}}>
+        <Typography variant="h3" sx={{alignContent:'center', color:'#ffffff'}}>
           Welcome to the Ding Lab
         </Typography>
       </Stack>
