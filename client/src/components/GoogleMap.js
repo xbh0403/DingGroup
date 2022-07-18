@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import WhereToVoteIcon from '@mui/icons-material/WhereToVote';
 import { googleMapApiKey } from "../api_keys";
 
-const AnyReactComponent = () => <div>{<WhereToVoteIcon/>}</div>;
+const AnyReactComponent = () => <div>{<WhereToVoteIcon fontSize={"large"}/>}</div>;
 
 const handleApiLoaded = (map, maps) => {
   // use map and maps objects
@@ -15,7 +15,7 @@ export default function GoogleMap({height, width}){
       lat: 49.26131619158471,
       lng: -123.24901713312708
     },
-    zoom: 14
+    zoom: 15
   };
 
   return (
