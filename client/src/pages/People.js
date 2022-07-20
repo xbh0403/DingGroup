@@ -34,7 +34,7 @@ function People() {
               width="80%"
               sx={{m:'auto', mt:5}}>
           <Grid item xs={12}>
-            <Typography variant="h4" align='center' sx={{m: 'auto'}}>
+            <Typography variant="h4" align='center' sx={{m: 'auto', mb:2}}>
               Principal Investigator
             </Typography>
           </Grid>
@@ -50,6 +50,11 @@ function People() {
             </Typography>
             <Typography variant='h5' align='left'>
               Google Scholar: {<IconButton onClick={()=>{window.open("https://scholar.google.ca/citations?user=AtFiBlgAAAAJ&hl=en", '_blank');}}><GoogleIcon/></IconButton>}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h4" align='center' sx={{m: 'auto', mt:10}}>
+              Team Members
             </Typography>
           </Grid>
         </Grid>

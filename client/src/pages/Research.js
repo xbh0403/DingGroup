@@ -44,7 +44,7 @@ function Research() {
         </Typography>
       </Stack>
       <Grid sx={{width: "90%", m: "auto"}}>
-        <Typography variant="h5" align='center' sx={{mt: 5}}>
+        <Typography variant="h4" align='center' sx={{mt: 5}}>
           Selected Publications
         </Typography>
         <PaperCard paper={temp_1}/>
