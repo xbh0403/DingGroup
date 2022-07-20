@@ -1,8 +1,27 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack } from '@mui/material'
+import { Typography, Stack, Grid } from '@mui/material'
+import PaperCard from '../components/PaperCard'
 
 import backgroundImage from '../images/cyp.png'
+
+const temp_1 = {
+  title: "Systematic comparative analysis of single cell RNA-sequencing methods.",
+  authors: "Ding, J., Adiconis, X., Simmons, S. K., Kowalczyk, M. S., Hession, C. C., Marjanovic, N. D., … & Regev, A., Levin, J.Z.† (2020).",
+  journal: "Nature Biotechnology",
+  abstract: "The scale and capabilities of single-cell RNA-sequencing methods have expanded rapidly in recent years, enabling major discoveries and large-scale cell mapping efforts. However, these methods have not been systematically and comprehensively benchmarked. Here, we directly compare seven methods for single-cell and/or single-nucleus profiling—selecting representative methods based on their usage and our expertise and resources to prepare libraries—including two low-throughput and five high-throughput methods. We tested the methods on three types of samples: cell lines, peripheral blood mononuclear cells and brain tissue, generating 36 libraries in six separate experiments in a single center. To directly compare the methods and avoid processing differences introduced by the existing pipelines, we developed scumi, a flexible computational pipeline that can be used with any single-cell RNA-sequencing method. We evaluated the methods for both basic performance, such as the structure and alignment of reads, sensitivity and extent of multiplets, and for their ability to recover known biological information in the samples.",
+  doi: "https://doi.org/10.1038/s41587-020-0465-8",
+}
+
+const temp_2 = {
+  title: "Deep generative model embedding of single-cell RNA-Seq profiles on hyperspheres and hyperbolic spaces.",
+  authors: "Ding, J.†, & Regev, A.† (2019).",
+  journal: "Nature Communications",
+  abstract: "Single-cell RNA-Seq (scRNA-seq) is invaluable for studying biological systems. Dimensionality reduction is a crucial step in interpreting the relation between cells in scRNA-seq data. However, current dimensionality reduction methods are often confounded by multiple simultaneous technical and biological variability, result in “crowding” of cells in the center of the latent space, or inadequately capture temporal relationships. Here, we introduce scPhere, a scalable deep generative model to embed cells into low-dimensional hyperspherical or hyperbolic spaces to accurately represent scRNA-seq data. ScPhere addresses multi-level, complex batch factors, facilitates the interactive visualization of large datasets, resolves cell crowding, and uncovers temporal trajectories. We demonstrate scPhere on nine large datasets in complex tissue from human patients or animal development. Our results show how scPhere facilitates the interpretation of scRNA-seq data by generating batch-invariant embeddings to map data from new individuals, identifies cell types affected by biological variables, infers cells’ spatial positions in pre-defined biological specimens, and highlights complex cellular relations.",
+  codeLink: "https://github.com/klarman-cell-observatory/scPhere",
+  doi: "10.1038/s41467-021-22851-4",
+  fig: "https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41587-020-0465-8/MediaObjects/41587_2020_465_Fig1_HTML.png?as=webp"
+}
 
 function Research() {
   return (
@@ -24,6 +43,13 @@ function Research() {
           Research
         </Typography>
       </Stack>
+      <Grid sx={{width: "90%", m: "auto"}}>
+        <Typography variant="h5" align='center' sx={{mt: 5}}>
+          Selected Publications
+        </Typography>
+        <PaperCard paper={temp_1}/>
+        <PaperCard paper={temp_2}/>
+      </Grid>
     </>
   )
 }
