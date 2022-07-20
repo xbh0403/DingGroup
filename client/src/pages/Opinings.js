@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack, Box, Grid, Link } from '@mui/material'
+import { Typography, Stack, Box, Grid } from '@mui/material'
 import ProgramCard from '../components/ProgramCard'
 import backgroundImage from '../images/cyp.png'
 
@@ -39,13 +39,13 @@ function Join() {
           <Grid item xs={12} sm={6}>
             <ProgramCard 
             name={"M.Sc. and Ph.D. in Bioinformatics"}
-            details={"STUB STUB STUB STUB STUB STUB STUB STUB STUBSTUB STUB STUB STUB STUB STUB STUB STUB STUB"}
+            details={"Click the card to learn more about our programs."}
             href={"https://www.bioinformatics.ubc.ca/"}/>
           </Grid>
           <Grid item xs={12} sm={6}>
             <ProgramCard 
             name={"M.Sc. and Ph.D. in Computer Science"}
-            details={"STUB STUB STUB STUB STUB STUB STUB STUB STUBSTUB STUB STUB STUB STUB STUB STUB STUB STUB"}
+            details={"Click the card to learn more about our programs."}
             href={"https://www.cs.ubc.ca/students/grad/graduate-programs"}/>
           </Grid>
         </Grid>
