@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
+// import { Provider } from 'react-redux';
+// import { configureStore } from '@reduxjs/toolkit';
 import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
 import Research from './pages/Research';
 import People from './pages/People';
 import Contact from './pages/Contact';
-import rootReducer from './redux/reducers';
+// import rootReducer from './redux/reducers';
 import News from './pages/News';
 import Opinings from './pages/Opinings';
 
-const store = configureStore({ reducer: rootReducer });
+// const store = configureStore({ reducer: rootReducer });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Provider store={store}>
+    // <Provider store={store}>
       <BrowserRouter>
         <Routes>
 
@@ -30,7 +30,7 @@ root.render(
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
-    </Provider>
+    // </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
