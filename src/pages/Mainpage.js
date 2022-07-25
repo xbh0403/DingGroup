@@ -2,10 +2,10 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { Typography, Stack } from '@mui/material'
 import backgroundImage from '../images/cyp.png'
-import useWindowDimensions from '../components/Window';
+// import useWindowDimensions from '../components/Window';
 
 function Mainpage() {
-  const { height, width } = useWindowDimensions();
+  // const { height, width } = useWindowDimensions();
   
   return (
     <>
@@ -22,7 +22,8 @@ function Mainpage() {
           backgroundPosition: 'center',}}
       >
         <Navbar/>
-        <Typography variant={width < 600 ? 'h4' : 'h3'} sx={{alignContent:'center', color:'#ffffff'}}>
+        {/* <Typography variant={width < 600 ? 'h4' : 'h3'} sx={{alignContent:'center', color:'#ffffff'}}> */}
+        <Typography variant='h3' sx={{alignContent:'center', color:'#ffffff'}}>
           Welcome to the Ding Lab
         </Typography>
       </Stack>

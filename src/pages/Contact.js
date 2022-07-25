@@ -3,11 +3,11 @@ import Navbar from '../components/Navbar'
 import { Typography, Stack, Grid, Box, Link, IconButton } from '@mui/material'
 import backgroundImage from '../images/cyp.png'
 import GoogleMap from '../components/GoogleMap';
-import useWindowDimensions from '../components/Window';
+// import useWindowDimensions from '../components/Window';
 import EmailIcon from '@mui/icons-material/Email';
 
 function Contact() {
-  const { height, width } = useWindowDimensions();
+  // const { height, width } = useWindowDimensions();
   const handleOnClick = () => {
     window.open("mailto:jiarui.ding@ubc.ca", '_blank');
   }
@@ -58,7 +58,8 @@ function Contact() {
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{mt: 5}}>
-            <GoogleMap width={width*0.7} height={height > width ? width*0.7 : width*0.35}/>
+            {/* <GoogleMap width={width*0.7} height={height > width ? width*0.7 : width*0.35}/> */}
+            <GoogleMap width={500} height={500}/>
           </Grid>
         </Grid>
       </Box>
