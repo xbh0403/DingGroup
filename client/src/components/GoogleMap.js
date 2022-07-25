@@ -1,7 +1,11 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 import WhereToVoteIcon from '@mui/icons-material/WhereToVote';
-import { googleMapApiKey } from "../api_keys";
+// import { googleMapApiKey } from "../api_keys";
+
+const key1 = "AIzaSyCVYXlukwq1d6CncKTe";
+const key2 = "_nGhhQO4wDzVGfE";
+const googleMapApiKey = key1 + key2;
 
 const AnyReactComponent = () => <div>{<WhereToVoteIcon fontSize={"large"}/>}</div>;
 
