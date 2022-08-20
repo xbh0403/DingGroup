@@ -87,6 +87,18 @@ export const darkStyle = [
 ];
 
 export default function GoogleMapComponent({height, width}){
+  // Prevented Roboto from loading
+  var head = document.getElementsByTagName('head')[0];
+  // Save the original method
+  var insertBefore = head.insertBefore;
+  // Replace it!
+  head.insertBefore = function (newElement, referenceElement) {
+      if (newElement.href && newElement.href.indexOf('//fonts.googleapis.com/css?family=Roboto') > -1) {
+          return;
+      }
+      insertBefore.call(head, newElement, referenceElement);
+  };
+  
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = React.useMemo(
     () =>
