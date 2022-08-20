@@ -1,34 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import { Typography, Stack, Grid, Box, IconButton, useMediaQuery, CssBaseline } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useSelector, useDispatch} from 'react-redux';
+import { getPeopleAsync } from '../redux/people/thunks';
+
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import GoogleIcon from '@mui/icons-material/Google';
 import backgroundImage from '../images/cyp.png'
-// import useWindowDimensions from '../components/Window';
 import PeopleCard from '../components/PeopleCard';
-
-const people1 = {
-    name: 'Joe Doe',
-    programTitle: 'Bachelor of Science in',
-    program: 'Computer Science',
-    image: 'https://www.broadlawns.org/filesimages/No%20Image.jpg',
-    detail: 'abshcuihiejslkac'
-};
-const people2 = {
-  name: 'Joe Doe',
-  programTitle: "Ph.D. Candidate in",
-  program: 'Computer Science',
-  image: 'https://www.broadlawns.org/filesimages/No%20Image.jpg',
-  detail: 'abshcuihiejslkac'
-};
-const people3 = {
-  name: 'Joe Doe',
-  programTitle: "Ph.D. Student in",
-  program: 'Computer Science',
-  image: 'https://www.broadlawns.org/filesimages/No%20Image.jpg',
-  detail: 'abshcuihiejslkac'
-};
 
 function People() {
   // const { height, width } = useWindowDimensions();
@@ -42,7 +22,14 @@ function People() {
           }),
       [prefersDarkMode],
   );
-   
+
+  const dispatch = useDispatch();
+  const people = useSelector(state => state.people.people);
+  useEffect(() => {
+    dispatch(getPeopleAsync());
+  }, [dispatch]);
+  console.log(people);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -105,21 +92,13 @@ function People() {
               Team Members
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={3} align='center' sx={{mt: 1}}>
-            <PeopleCard people={people1}/>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} align='center' sx={{mt: 1}}>
-            <PeopleCard people={people2}/>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} align='center' sx={{mt: 1}}>
-            <PeopleCard people={people3}/>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} align='center' sx={{mt: 1}}>
-            <PeopleCard people={people1}/>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} align='center' sx={{mt: 1}}>
-            <PeopleCard people={people1}/>
-          </Grid>
+          {people.map((person) => {
+            return (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={person.name}>
+                <PeopleCard people={person}/>
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
     </ThemeProvider>

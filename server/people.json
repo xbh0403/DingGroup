@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Joe Doe 0",
+        "programTitle": "Bachelor of Science in",
+        "program": "Computer Science",
+        "image": "https://www.broadlawns.org/filesimages/No%20Image.jpg",
+        "detail": "abshcuihiejslkac"
+    },
+    {
+        "name": "Joe Doe 1",
+        "programTitle": "Ph.D. Candidate in",
+        "program": "Computer Science",
+        "image": "https://www.broadlawns.org/filesimages/No%20Image.jpg",
+        "detail": "abshcuihiejslkac"
+    },
+    {
+        "name": "Joe Doe 2",
+        "programTitle": "Ph.D. Student in",
+        "program": "Computer Science",
+        "image": "https://www.broadlawns.org/filesimages/No%20Image.jpg",
+        "detail": "abshcuihiejslkac"
+    }
+]
