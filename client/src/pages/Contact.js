@@ -1,19 +1,32 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack, Grid, Box, Link, IconButton } from '@mui/material'
+import { Typography, Stack, Grid, Box, Link, IconButton, useMediaQuery, CssBaseline } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import backgroundImage from '../images/cyp.png'
-import GoogleMap from '../components/GoogleMap';
+import GoogleMapComponent from '../components/GoogleMapComponent';
 import useWindowDimensions from '../components/Window';
 import EmailIcon from '@mui/icons-material/Email';
 
 function Contact() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+      () =>
+          createTheme({
+              palette: {
+                  mode: prefersDarkMode ? 'dark' : 'light',
+              },
+          }),
+      [prefersDarkMode],
+  );
+   
   const { height, width } = useWindowDimensions();
   const handleOnClick = () => {
     window.open("mailto:jiarui.ding@ubc.ca", '_blank');
   }
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Stack
         direction="column"
         justifyContent="space-evenly"
@@ -58,11 +71,11 @@ function Contact() {
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{mt: 5}}>
-            <GoogleMap width={width*0.7} height={height > width ? width*0.7 : width*0.35}/>
+            <GoogleMapComponent width={width*0.7} height={height > width ? width*0.7 : width*0.35}/>
           </Grid>
         </Grid>
       </Box>
-    </>
+    </ThemeProvider>
   )
 }
 

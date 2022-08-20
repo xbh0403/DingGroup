@@ -1,2 +1,2 @@
 node_modules
-client/src/api_keys.js
+client/.env
