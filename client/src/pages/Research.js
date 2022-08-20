@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack, Grid } from '@mui/material'
+import { Typography, Stack, Grid, useMediaQuery, CssBaseline } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PaperCard from '../components/PaperCard'
 
 import backgroundImage from '../images/cyp.png'
@@ -24,8 +25,19 @@ const temp_2 = {
 }
 
 function Research() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+      () =>
+          createTheme({
+              palette: {
+                  mode: prefersDarkMode ? 'dark' : 'light',
+              },
+          }),
+      [prefersDarkMode],
+  );
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Stack
         direction="column"
         justifyContent="space-evenly"
@@ -50,7 +62,7 @@ function Research() {
         <PaperCard paper={temp_1}/>
         <PaperCard paper={temp_2}/>
       </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 

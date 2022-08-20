@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack, Grid, Box, IconButton } from '@mui/material'
+import { Typography, Stack, Grid, Box, IconButton, useMediaQuery, CssBaseline } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import GoogleIcon from '@mui/icons-material/Google';
 import backgroundImage from '../images/cyp.png'
@@ -31,8 +32,20 @@ const people3 = {
 
 function People() {
   // const { height, width } = useWindowDimensions();
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+      () =>
+          createTheme({
+              palette: {
+                  mode: prefersDarkMode ? 'dark' : 'light',
+              },
+          }),
+      [prefersDarkMode],
+  );
+   
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Stack
         direction="column"
         justifyContent="space-evenly"
@@ -109,7 +122,7 @@ function People() {
           </Grid>
         </Grid>
       </Box>
-    </>
+    </ThemeProvider>
   )
 }
 

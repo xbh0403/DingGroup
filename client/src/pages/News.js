@@ -1,12 +1,25 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack } from '@mui/material'
+import { Typography, Stack, useMediaQuery, CssBaseline  } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import backgroundImage from '../images/cyp.png'
 
 function News() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+      () =>
+          createTheme({
+              palette: {
+                  mode: prefersDarkMode ? 'dark' : 'light',
+              },
+          }),
+      [prefersDarkMode],
+  );
+   
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Stack
         direction="column"
         justifyContent="space-evenly"
@@ -24,7 +37,7 @@ function News() {
           News
         </Typography>
       </Stack>
-    </>
+    </ThemeProvider>
   )
 }
 

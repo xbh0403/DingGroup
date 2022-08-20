@@ -1,12 +1,25 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Typography, Stack, Box, Grid } from '@mui/material'
+import { Typography, Stack, Box, Grid, useMediaQuery, CssBaseline } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ProgramCard from '../components/ProgramCard'
 import backgroundImage from '../images/cyp.png'
 
 function Join() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+      () =>
+          createTheme({
+              palette: {
+                  mode: prefersDarkMode ? 'dark' : 'light',
+              },
+          }),
+      [prefersDarkMode],
+  );
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Stack
         direction="column"
         justifyContent="space-evenly"
@@ -50,7 +63,7 @@ function Join() {
           </Grid>
         </Grid>
       </Box>
-    </>
+    </ThemeProvider>
   )
 }
 
